@@ -62,7 +62,6 @@ const HorizontalList = ({
   const RenderFlatList = () => {
     return (
       <FlatList
-        className="mt-4"
         horizontal
         data={data}
         keyExtractor={({ id }) => id.toString()}
@@ -80,11 +79,11 @@ const HorizontalList = ({
     <View className="px-4 mt-8">
       <Text
         style={{ fontFamily: "CaptainAmerica" }}
-        className="text-3xl text-white"
+        className="text-3xl text-white mb-4"
       >
         {isLatest ? `Latest ${type}` : type}
       </Text>
-      {isLoading ? <RenderLoader /> : <RenderFlatList />}
+      {isLoading ? <HorizontalListLoader/> : <RenderFlatList />}
     </View>
   );
 };

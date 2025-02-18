@@ -6,6 +6,7 @@ import OverlayContainer from "@/components/overlay-container";
 import { getCharactersInfinite } from "@/services/marvel-api";
 import ListFooter from "@/components/list-footer";
 import ListCard from "@/components/list-card";
+import VerticalListLoader from "@/components/vertical-list-loader";
 
 
 const BACKGROUND_IMAGE = require("../../../../assets/images/charbg.jpg");
@@ -33,9 +34,10 @@ const allCharacters = useMemo(() => {
       />
       <View className="flex-1 py-10 px-4">
         {isLoading ? (
-          <View className="flex-1 items-center justify-center">
-          <ActivityIndicator size="large" color="white" />
-        </View>
+          // <View className="flex-1 items-center justify-center">
+          //   <ActivityIndicator size="large" color="white" />
+          // </View>
+          <VerticalListLoader/>
         ) : (
           <FlatList
             numColumns={2}
