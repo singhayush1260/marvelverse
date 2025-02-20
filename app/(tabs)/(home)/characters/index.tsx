@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { View,FlatList, ActivityIndicator } from "react-native";
+import { View,FlatList } from "react-native";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import ScreenHeader from "@/components/screen-header";
 import OverlayContainer from "@/components/overlay-container";

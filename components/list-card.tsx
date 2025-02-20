@@ -9,8 +9,6 @@ interface ListCardProps {
 }
 
 const ListCard = ({ data, type }: ListCardProps) => {
-
-  //console.log("data from list-card",data)
   let name = "Unknown";
   let imageUri = data.thumbnail
     ? { uri: `${data.thumbnail.path}.${data.thumbnail.extension}` }

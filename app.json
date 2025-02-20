@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "marvel",
+    "name": "Marvel",
     "slug": "marvel",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,7 +16,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#e23636"
-      }
+      },
+      "package": "com.singhayush1260.marvel",
+      "permissions": [],
+      "usesCleartextTraffic": true
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +40,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "574bc932-3da0-4f73-ae91-1a1bd6c9a641"
+      }
     }
   }
 }
