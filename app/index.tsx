@@ -3,6 +3,7 @@ import {
   Text,
   TouchableOpacity,
   ImageBackground,
+  StatusBar
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
@@ -17,6 +18,7 @@ const Index = () => {
 
   return (
     <View className="flex-1 ">
+      {/* <StatusBar hidden/> */}
       <ImageBackground
         className="flex-1"
         source={require("../assets/images/ob1.jpg")}

@@ -38,6 +38,25 @@ export const getCharacters = async (limit=8,offset=0): Promise<Character[]> => {
 };
 
 
+export const getLatestCharacters = async (limit=8,offset=0): Promise<Character[]> => {
+  try {
+
+    const response = await axios.get(`${baseURL}characters?orderBy=-modified`, {
+      params: {
+        ts,
+        apikey: publicKey,
+        hash,
+        limit,
+        offset
+      },
+    });
+    return response.data.data.results as Character[];
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
 
 export const getCharactersInfinite = async (pageParams:number): Promise<{characters:Character[],currrentPage:number,nextPage:number|null}> => {
 
@@ -318,6 +337,27 @@ export const getSeries = async (
 ): Promise<Series[]> => {
   try {
     const response = await axios.get(`${baseURL}series`, {
+      params: {
+        ts,
+        apikey: publicKey,
+        hash,
+        limit,
+        offset,
+      },
+    });
+    return response.data.data.results as Series[];
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const getLatestSeries = async (
+  limit = 8,
+  offset = 0
+): Promise<Series[]> => {
+  try {
+    const response = await axios.get(`${baseURL}series?orderBy=-modified`, {
       params: {
         ts,
         apikey: publicKey,

@@ -11,7 +11,7 @@ interface HorizontalCardProps {
 const HorizontalCard = ({ data, type }: HorizontalCardProps) => {
   let name = "Unknown";
   let imageUri = data.thumbnail
-    ? { uri: `${data.thumbnail.path}.${data.thumbnail.extension}` }
+    ? { uri: `https:${data.thumbnail.path.split(":")[1]}.${data.thumbnail.extension}` }
     : IMAGE_NOT_FOUND;
 
   if ("name" in data) {

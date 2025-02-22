@@ -11,8 +11,11 @@ interface ListCardProps {
 const ListCard = ({ data, type }: ListCardProps) => {
   let name = "Unknown";
   let imageUri = data.thumbnail
-    ? { uri: `${data.thumbnail.path}.${data.thumbnail.extension}` }
+    ? { uri: `https:${data.thumbnail.path.split(":")[1]}.${data.thumbnail.extension}` }
     : IMAGE_NOT_FOUND;
+    // let imageUri = data.thumbnail
+    // ? { uri: `${data.thumbnail.path}.${data.thumbnail.extension}` }
+    // : IMAGE_NOT_FOUND;
 
   if ("name" in data) {
     name = data.name;
@@ -22,7 +25,7 @@ const ListCard = ({ data, type }: ListCardProps) => {
     name=`${data.firstName} ${data.lastName}`;
   }
 
- 
+ console.log("image uri from list card",imageUri);
 
   const router = useRouter();
   return (
